@@ -61,13 +61,5 @@ where dea.continent is not null
 and vac.new_vaccinations is not null
 order by 2,3
 
---- Using CTE
-Select dea.continent, dea.location, dea.date,dea.population, vac.new_vaccinations, sum(cast(vac.new_vaccinations as bigint)) over (partition by dea.location order by dea.location, dea.date) 
-from PortfolioProject01..Coviddeaths dea
-join PortfolioProject01..covidVaccinations vac
-on dea.location = vac.location
-and dea.date= vac.date 
-where dea.continent is not null
-and vac.new_vaccinations is not null
-order by 2,3
+
 
