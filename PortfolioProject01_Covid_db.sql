@@ -1,8 +1,13 @@
+/*
+Covid 19 Data Exploration 
+Skills used: Joins, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
+*/
+
 select * from PortfolioProject01..Coviddeaths where continent is not null
 order by 3,4
 
---select * from PortfolioProject01..covidVaccinations
---order by 3,4
+select * from PortfolioProject01..covidVaccinations
+order by 3,4
 
 -- selecting the needed data
 Select location, date, total_cases, new_cases, total_deaths, population from PortfolioProject01..Coviddeaths where continent is not null
